@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HR Website</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+        <style>
+            .container:nth-child(2n) {
+                color: #f8f9fa !important;
+                background: url("https://images.squarespace-cdn.com/content/v1/5d39b86b4c1e5c000178e981/1565602700688-V8KAWRQQMQCPM5QGVA1E/ke17ZwdGBToddI8pDm48kGkUaBjg8-yeaqRydMZx6JB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hveExjbswnAj1UrRPScjfAgbHzjazpaGVq7xTzTe12-KRynurKZRTACv-Np8iXoqw/HR.jpg");
+            }
+
+            .table {
+                caption-side: bottom;
+                width: 100%;
+                margin-bottom: 1rem;
+                vertical-align: top;
+                border-color: #dee2e6;
+                border-collapse: collapse;
+            }
+
+            .container:nth-child(2n) .table {
+                color: #f8f9fa !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container rounded-3">
+            <div class="p-3">
+                <label class="form-label" for="gross-salary">Gross salary</label>
+                <input class="form-control" type="text" id="gross-salary" placeholder="gross salary">
+            </div>
+            <div class="p-3">
+                <button id="compute-gross-salary" class="btn btn-primary">
+                    Calculate Net
+                </button>
+            </div>
+            <div id="result-gross-salary" class="p-3"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <div class="p-3">
+                <input type="number" id="number-1" placeholder="salary 1" class="form-control">
+            </div>
+            <div class="p-3">
+                <input type="number" id="number-2" placeholder="salary 2" class="form-control">
+            </div>
+            <div class="p-3">
+                <input type="number" id="number-3" placeholder="salary 3" class="form-control">
+            </div>
+            <div class="p-3">
+                <input type="number" id="number-4" placeholder="salary 4" class="form-control">
+            </div>
+            <div class="p-3">
+                <input type="number" id="number-5" placeholder="salary 5" class="form-control">
+            </div>
+            <div class="p-3">
+                <button id="compute-number-sum" class="btn btn-primary">
+                    Sum salaries
+                </button>
+            </div>
+            <div class="p-3" id="number-sum"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chaim X. Mayo</td>
+                        <td>9218</td>
+                    </tr>
+                    <tr>
+                        <td>Virginia X. Greer</td>
+                        <td>8441</td>
+                    </tr>
+                    <tr>
+                        <td>Elaine R. Robbins</td>
+                        <td>6197</td>
+                    </tr>
+                    <tr>
+                        <td>Erich R. Avila</td>
+                        <td>6965</td>
+                    </tr>
+                    <tr>
+                        <td>Kennan F. Callahan</td>
+                        <td>5449</td>
+                    </tr>
+                    <tr>
+                        <td>Julie W. Clayton</td>
+                        <td>4792</td>
+                    </tr>
+                    <tr>
+                        <td>Micah X. Larsen</td>
+                        <td>7849</td>
+                    </tr>
+                    <tr>
+                        <td>Byron S. Dorsey</td>
+                        <td>7633</td>
+                    </tr>
+                    <tr>
+                        <td>Barry E. Walls</td>
+                        <td>8535</td>
+                    </tr>
+                    <tr>
+                        <td>Mufutau M. Ortiz</td>
+                        <td>3601</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="p-3 col-6">
+                    <label class="form-label" for="index-1">Starting from:</label>
+                    <input class="form-control" type="number" id="index-1" min="1" max="10" value="1">
+                </div>
+                <div class="p-3 col-6">
+                    <label class="form-label" for="index-2">Up to:</label>
+                    <input class="form-control" type="number" id="index-2" min="1" max="10" value="10">
+                </div>
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-salary-index">
+                    Compute salaries between specified indices
+                </button>
+            </div>
+            <div class="p-3" id="result-salary-index"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <div class="row">
+                <div class="p-3 col-6">
+                    <input type="text" class="form-control" id="to-capitalize-1" placeholder="first name">
+                </div>
+                <div class="p-3 col-6">
+                    <input type="text" class="form-control" id="to-capitalize-2" placeholder="last name">
+                </div>
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="capitalize">
+                    Capitalize
+                </button>
+            </div>
+            <div class="p-3" id="result-to-capitalize"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <div class="p-3">
+                <label for="is-a-number" class="form-label">Input some text</label>
+                <input type="text" class="form-control" id="is-a-number" placeholder="possible number">
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-is-a-number">
+                    Is it a number?
+                </button>
+            </div>
+            <div class="p-3" id="result-is-a-number"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <div class="p-3">
+                <label for="is-email" class="form-label">Input some text</label>
+                <input type="text" class="form-control" id="is-email">
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-is-email">
+                    Is it an email?
+                </button>
+            </div>
+            <div class="p-3" id="result-is-email"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <div class="row">
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-1" placeholder="salary-1">
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-2" placeholder="salary-2">
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-3" placeholder="salary-3">
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-4" placeholder="salary-4">
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-5" placeholder="salary-5">
+                </div>
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-find-max">
+                    Calculate highest salary
+                </button>
+            </div>
+            <div class="p-3" id="result-find-max"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <ul class="list-group p-3 text-dark">
+                <li class="list-group-item">John Smith</li>
+                <li class="list-group-item">Phyllis Duncan</li>
+                <li class="list-group-item">Alexandra Cummings</li>
+                <li class="list-group-item">Ruth Martin</li>
+                <li class="list-group-item">Charissa Kinney</li>
+                <li class="list-group-item">Jared Noel</li>
+                <li class="list-group-item">Mark Osborne</li>
+                <li class="list-group-item">Andrew Johnson</li>
+                <li class="list-group-item">Macey Massey</li>
+                <li class="list-group-item">David Mcdonald</li>
+            </ul>
+            <div class="p-3">
+                <label for="contains-filter" class="form-label">Filter:</label><input type="text" class="form-control" id="contains-filter" placeholder="find">
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-contains-filter">
+                    Find all matching inputs
+                </button>
+            </div>
+            <ul class="list-group p-3 text-dark" id="contains-output"></ul>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

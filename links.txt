@@ -1,0 +1,18 @@
+Strings: 
+https://javascript.info/string
+
+
+Slicing strings: 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+
+Numbers: 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+
+Variables: 
+https://htmldog.com/guides/javascript/beginner/variables/
+
+
+Arrays: 
+https://www.htmldog.com/guides/javascript/beginner/arrays/
