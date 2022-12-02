@@ -1,36 +1,60 @@
 function calculateNetSalary(grossSalary) {
-    
+    return Math.floor(grossSalary * 45 / 100);
 }
 
 function sumSalaries(salaries) {
-    
+    return salaries.reduce((a, b) => a + b, 0);
 }
 
 function inputToNumber(elementID) {
-    
+    let input = document.getElementById(elementID).value;
+    return isNaN(input) ? 0 : +input;
 }
 
 function capitalizeFirstLastName(text1, text2) {
-    
+    return text1.split("").map((x, index) => index === 0 ? x = x.toUpperCase() : x = x.toLowerCase()).join("") +
+        " " +
+        text2.split("").map((x, index) => index === 0 ? x = x.toUpperCase() : x = x.toLowerCase()).join("")
 }
 
 function sumSubsetSalaries(allSalaries, start, end) {
-    
+    let result = 0;
+    for (let i = start - 1; i < end; i++) {
+        result += allSalaries[i];
+    }
+    return result;
 }
 
 function getHighestSalary(list) {
-    
+    return list.sort((a,b) => b - a)[0]
 }
 
 function getMatchingPersons(employees, find) {
-    
+    return employees.filter(x => x.toLowerCase().includes(find.toLowerCase()))
 }
 
 function isValideNumber(input) {
-    
-} 
+    return (input === `${+input}`) ||
+        (input === `+${+input}`)
+        ? true : false;
+}
 
 function isValideEmail(text) {
+    if (/^\w+([\.-]?\w+)*@\w+(\.\w{2,3})+$/.test(text)) {
+        return "Valid email";
+    } else if (/^@\w+(\.\w{2,3})+$/.test(text)) {
+        return "Missing username";
+    } else if (/^\w+([\.-]?\w+)*@\w+@\w+(\.\w{2,3})+$/.test(text)) {
+        return "Can only have one '@' symbol"
+    } else if (/^\w+([\.-]?\w+)*@(\.\w{2,3})+$/.test(text)) {
+        return "Missing domain name before '.'";
+    } else if (/^\w+([\.-]?\w+)*@\w+\.$/.test(text)) {
+        return "Missing domain after '.'"
+    } else if (/^\w+([\.-]?\w+)*@\w+$/.test(text)) {
+        return "Missing '.' symbol"
+    } else if (/^\w+([\.-]?\w+)*@\w+\.\w+(\.\w{2,3})+$/.test(text)) {
+        return "Can only have one '.' symbol"
+    }
 }
 
 document
@@ -45,16 +69,16 @@ document
     });
 
 document.getElementById("compute-number-sum")
-        .addEventListener("click", (e) => {
-            e.preventDefault();
-            let input = [];
-            
-            for (let i = 1; i <= 5; i++) {
-                input.push(inputToNumber("number-" + i));
-            }
-            
-            document.getElementById("number-sum").innerText = sumSalaries(input);
-        });
+    .addEventListener("click", (e) => {
+        e.preventDefault();
+        let input = [];
+
+        for (let i = 1; i <= 5; i++) {
+            input.push(inputToNumber("number-" + i));
+        }
+
+        document.getElementById("number-sum").innerText = sumSalaries(input);
+    });
 
 document
     .getElementById("compute-salary-index")
@@ -126,7 +150,7 @@ document
 
         let list = [];
         let max = document.getElementsByClassName('list-group')[0].children.length
-        for (let i = 0; i<max; i++) {
+        for (let i = 0; i < max; i++) {
             list.push(document.getElementsByClassName('list-group')[0].children[i].innerText)
         }
         let filtered = getMatchingPersons(
